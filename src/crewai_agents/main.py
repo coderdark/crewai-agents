@@ -18,12 +18,12 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs',
-        'current_year': str(datetime.now().year)
+        'motion': 'Macs should be the computer of choice for all users.'
     }
 
     try:
-        CrewaiAgents().crew().kickoff(inputs=inputs)
+        results = CrewaiAgents().crew().kickoff(inputs=inputs)
+        print(results.raw)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
